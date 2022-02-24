@@ -24,15 +24,29 @@ function addMovie(event) {
 function deleteMovie(event) {
     event.target.parentNode.remove()
     message.textContent = "Movie deleted"
+    revealMessage()
 }
 
 function crossOffMovie(event) {
     event.target.classList.toggle("checked")
     if(event.target.classList.contains("checked")){
-        message.textContent = "You watched that movie, pimp!"
+        message.textContent = "You watched that movie!"
     }else {
-        message.textContent = "Change your mind much?"
+        message.textContent = "You unwatched that movie"
     }
+    revealMessage()
 }
+
+function hideMessage() {
+    message.className = "hide"
+}
+
+function revealMessage() {
+    message.className = ""
+    setTimeout(hideMessage, 1000)
+}
+
 // Event listeners
 form.addEventListener("submit", addMovie)
+
+
