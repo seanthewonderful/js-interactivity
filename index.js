@@ -32,7 +32,7 @@ function crossOffMovie(event) {
     if(event.target.classList.contains("checked")){
         message.textContent = "You watched that movie!"
     }else {
-        message.textContent = "You unwatched that movie"
+        message.textContent = "Movie unwatched"
     }
     revealMessage()
 }
